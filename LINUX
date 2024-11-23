@@ -1,0 +1,41 @@
+###################### LINUX INTERVIEW QUESTIONS ###################
+
+1. How to check the list of installed packages? 
+apt list --installed
+
+2. Command to check kernel version. 
+uname -r (5.15.0-60-generic)
+uname -a (Displays the kernel version along with additional details like the hostname, architecture, and OS.)
+
+3.  How to create a new user and add it as sudo? 
+sudo adduser newusername               # Create user (Debian/Ubuntu)
+sudo usermod -aG sudo newusername      # Add to sudo group (Debian/Ubuntu)
+
+sudo useradd -m -s /bin/bash newusername  # Create user (Red Hat/CentOS)
+sudo passwd newusername                 # Set password
+sudo usermod -aG wheel newusername      # Add to wheel group (Red Hat/CentOS)
+
+4. Command to check if a process called "a" is running or not. If running how stop it. 
+pgrep a
+
+5.  Command to list all files less than 5mb. 
+find /path/to/directory -type f -size -5M
+find . -type f -size -5M
+
+6. Hard link v/s soft link. 
+###Hard Link###
+Definition:
+A hard link is a direct reference to the physical data on the disk. Multiple hard links to the same file share the same inode number.
+Use Case:
+Used when you want multiple file names for the same file and need redundancy independent of the original file's name.
+###Soft Link###
+Definition:
+A soft link is a shortcut or pointer to another file or directory. It doesn’t share the same inode as the original file.
+Use Case:
+Used for creating shortcuts to files or directories, especially across file systems or for directories.
+
+7. Commands to check disk space usage and free RAM. 
+DISK SPACE: df -h
+FREE RAM: free -h
+
+
